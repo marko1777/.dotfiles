@@ -3,7 +3,7 @@
 # I am using zsh instead of bash.  I was having some troubles using bash with
 # arrays.  Didn't want to investigate, so I just did zsh
 # STOW_FOLDERS="bin,i3,netflix,nvim,personal,tmux,uwuntu,xkb,zsh"
-STOW_FOLDERS="bin, tmux, zsh"
+STOW_FOLDERS="bin, nvim, tmux, zsh"
 DOTFILES=$HOME/.dotfiles
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
