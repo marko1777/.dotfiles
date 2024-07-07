@@ -1,1 +1,43 @@
 PATH=$PATH:$HOME/.local/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'
+alias tb="nc termbin.com 9999"
+alias python='python3'
+
+alias df='df -h'               # human-readable sizes
+alias free='free -m'           # show sizes in MB
+alias grep='grep --color=auto' # colorize output (good for log files)
+
+alias l='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
+alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
+alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
+
+alias getin='docker exec -it $(docker ps | grep 8888 | head -c 12) /bin/bash'
+
+alias shutdown='systemctl poweroff'
+alias bluetooth='blueman-manager'
+alias picture='sxiv'
+
+bindkey -v
+alias v=nvim
+alias vim=nvim
+export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
+set enable-keypad on
+#
+# Where should I put you?
+bindkey -s '^F' "tmux-sessionizer\n"
+
+VIM="nvim"
+
+export PATH="~/work/avatao/challenge-toolbox/bin/:$PATH"
+# export PATH=/usr/local/share/npm/bin:$PATH
