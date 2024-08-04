@@ -1,0 +1,11 @@
+#!/bin/bash
+
+current_layout=$(setxkbmap -query | grep layout | awk '{print $2}' | tr -d ':')
+
+if [ "$current_layout" = "hu" ]; then
+  new_layout="us"
+else
+  new_layout="hu"
+fi
+
+setxkbmap "$new_layout"
