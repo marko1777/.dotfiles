@@ -327,7 +327,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id sleep 1; google-chrome-stable
 exec --no-startup-id sleep 1; slack
-exec sleep 2; st -e tmux
+exec sleep 4; st -e tmux
+exec --no-startup-id sleep 5; tmux source-file ~/.tmux.conf
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 # exec_always --no-startup-id fix_xcursor
 

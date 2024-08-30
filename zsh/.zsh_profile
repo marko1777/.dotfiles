@@ -1,5 +1,5 @@
 PATH=$PATH:$HOME/.local/bin
-export GOROOT=/usr/local/go
+export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
@@ -14,8 +14,8 @@ alias df='df -h'               # human-readable sizes
 alias free='free -m'           # show sizes in MB
 alias grep='grep --color=auto' # colorize output (good for log files)
 
-alias l='eza -al --color=always --group-directories-first' # my preferred listing
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+alias l='eza -al --color=always --group-directories-first .' # my preferred listing
+alias ls='eza -al --color=always --group-directories-first .' # my preferred listing
 alias la='eza -a --color=always --group-directories-first'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
