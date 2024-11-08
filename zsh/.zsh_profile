@@ -27,7 +27,8 @@ alias getin='docker exec -it $(docker ps | grep 8888 | head -c 12) /bin/bash'
 
 alias shutdown='systemctl poweroff'
 alias bluetooth='blueman-manager'
-alias audio='pavucontrol'
+# alias audio='pavucontrol'
+alias audio='pwvucontrol'
 alias picture='sxiv'
 
 bindkey -v

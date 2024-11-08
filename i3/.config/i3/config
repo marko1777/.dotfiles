@@ -206,7 +206,7 @@ workspace 5 output $fm
 workspace 6 output $fm
 
 workspace 7 output $fm
-workspace 8 output $sm
+workspace 8 output $fm
 workspace 9 output $sm
 workspace 10 output $sm
 workspace 11 output $sm
@@ -365,13 +365,13 @@ bar {
 }
 
 # Autostart applications
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# exec --no-startup-id picom -CGb -f ~/.config/picom.conf
+# exec --no-startup-id mons -e left
+# exec --no-startup-id mons -a -x ~/.screenlayout/mons.sh
 exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id feh --recursive --bg-fill --randomize ~/wallpapers/
 exec --no-startup-id picom --config ~/.config/picom.conf
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1;
-# exec --no-startup-id nitrogen --restore; sleep 1; picom --config ~/.config/picom/picom.conf
 exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
