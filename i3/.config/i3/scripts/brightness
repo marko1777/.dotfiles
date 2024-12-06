@@ -1,0 +1,53 @@
+#!/bin/bash
+
+CUR_BRI=$(xbacklight -get)
+CUR_BRI=$(echo $CUR_BRI | cut -d. -f1)
+
+((STEP = 20))
+
+display_notification() {
+    local value="$1"
+    local text="$2"
+    OPTIONS=(
+        "--appname=Brightness" # Name of your application
+        "Brightness"
+        "$text \nBrightness: "
+        "--hints=int:value:$value"  # User specified hints
+        "--replace=100"             # Set id of this notification
+        "--icon=brightness-systray" # An Icon that should be displayed with the notification
+    )
+    dunstify "${OPTIONS[@]}"
+}
+
+inc() {
+    xbacklight -inc 20
+}
+
+dec() {
+    xbacklight -dec 20
+}
+
+case $1 in
+-inc)
+    ((MAX_BRI = 100))
+    ((NEW_BRI = CUR_BRI + STEP))
+    if ((NEW_BRI > MAX_BRI)); then
+        ((NEW_BRI=$MAX_BRI))
+    fi
+    inc
+    display_notification "$NEW_BRI" "Increase"
+    ;;
+-dec)
+    ((MIN_BRI = 0))
+    ((NEW_BRI = CUR_BRI - STEP))
+    if ((NEW_BRI < MIN_BRI)); then
+        ((NEW_BRI= $MIN_BRI ))
+    fi
+    dec
+    display_notification "$NEW_BRI" "Decrease"
+    ;;
+*)
+    # display current brightness
+    echo $((CUR_BRI))
+    ;;
+esac

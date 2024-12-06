@@ -30,10 +30,17 @@ alias bluetooth='blueman-manager'
 # alias audio='pavucontrol'
 alias audio='pwvucontrol'
 alias picture='sxiv'
+alias pdf='zathura'
+alias storage='gdu'
+alias lzd='lazydocker'
 
 bindkey -v
 alias v=nvim
+alias vi=nvim
 alias vim=nvim
+export EDITOR=nvim
+export VISUAL=nvim
+
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 set enable-keypad on
 #
@@ -43,4 +50,5 @@ bindkey -s '^F' "tmux-sessionizer\n"
 VIM="nvim"
 
 export PATH="~/work/avatao/challenge-toolbox/bin/:$PATH"
+export VCPKG_ROOT="/home/mark/vcpkg"
 # export PATH=/usr/local/share/npm/bin:$PATH

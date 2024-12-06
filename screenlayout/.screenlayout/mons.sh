@@ -6,7 +6,7 @@
 #         feh --recursive --bg-fill --randomize ~/wallpapers/
 #         ;;
 #     2)
-        mons -e left
+        mons -e right
         feh --recursive --bg-fill --randomize ~/wallpapers/
         # feh --no-fehbg --bg-fill "${HOME}/wallpapers/a.jpg" \
         #                --bg-fill "${HOME}/wallpapers/b.jpg"
