@@ -34,8 +34,8 @@ case $1 in
     if ((NEW_BRI > MAX_BRI)); then
         ((NEW_BRI=$MAX_BRI))
     fi
-    inc
     display_notification "$NEW_BRI" "Increase"
+    inc
     ;;
 -dec)
     ((MIN_BRI = 0))
@@ -43,8 +43,8 @@ case $1 in
     if ((NEW_BRI < MIN_BRI)); then
         ((NEW_BRI= $MIN_BRI ))
     fi
-    dec
     display_notification "$NEW_BRI" "Decrease"
+    dec
     ;;
 *)
     # display current brightness

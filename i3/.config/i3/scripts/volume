@@ -52,10 +52,9 @@ case "$1" in
     fi
 
     if [ "$VOL" -lt 130 ]; then
-        pactl set-sink-volume @DEFAULT_SINK@ +$STEP%
         ((NEWVOL = $VOL + $STEP))
-        pactl set-sink-volume @DEFAULT_SINK@ +1%
         dunstify -a "Volume" "Volume" "Increase \nVolume: " -h int:value:$NEWVOL -i audio-volume-high -r 100
+        pactl set-sink-volume @DEFAULT_SINK@ +$STEP%
         pkill -RTMIN+10 i3blocks
     fi
     ;;
@@ -63,9 +62,9 @@ case "$1" in
     if [ "$MUTE" = "yes" ]; then
         pactl set-sink-mute @DEFAULT_SINK@ toggle
     fi
-    pactl set-sink-volume @DEFAULT_SINK@ -$STEP%
     ((NEWVOL = $VOL - $STEP))
     dunstify -a "Volume" "Volume" "Decrease \nVolume: " -h int:value:$NEWVOL -r 100 -i audio-volume-medium
+    pactl set-sink-volume @DEFAULT_SINK@ -$STEP%
     pkill -RTMIN+10 i3blocks
     ;;
 -mute)
