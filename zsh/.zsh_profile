@@ -34,7 +34,6 @@ alias pdf='zathura'
 alias storage='gdu'
 alias lzd='lazydocker'
 
-bindkey -v
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
@@ -50,5 +49,6 @@ bindkey -s '^F' "tmux-sessionizer\n"
 VIM="nvim"
 
 export PATH="~/work/avatao/challenge-toolbox/bin/:$PATH"
-export VCPKG_ROOT="/home/mark/vcpkg"
+export VCPKG_ROOT="/home/mark/tools/vcpkg"
+xset r rate 200 30
 # export PATH=/usr/local/share/npm/bin:$PATH
