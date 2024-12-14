@@ -378,8 +378,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id sleep 1; google-chrome-stable
 exec --no-startup-id sleep 1; slack
-exec st -e tmux;
-exec --no-startup-id sleep 1; st -e tmux send-keys "~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh" Enter;
+exec st -e tmux a;
+# exec --no-startup-id sleep 1; st -e tmux send-keys "~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh" Enter;
 # exec --no-startup-id sleep 5; tmux source-file ~/.tmux.conf
 
 # exec --no-startup-id xautolock -time 10 -locker blurlock
