@@ -80,14 +80,6 @@ plugins=(
     # tmux
 )
 
-zstyle ':omz:lib:*' aliases no
-bindkey -v
-export KEYTIMEOUT=1
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-export HISTFILE=$ZSH/cache/history
-
 source ~/.zsh_profile
 
 source $ZSH/oh-my-zsh.sh
@@ -120,7 +112,6 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 #
-source ~/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
