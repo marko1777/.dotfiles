@@ -7,5 +7,6 @@ if [ "$current_layout" = "hu" ]; then
 else
   new_layout="hu"
 fi
+dunstify -a "Keyboard Layout" "$new_layout"
 
 setxkbmap "$new_layout"
