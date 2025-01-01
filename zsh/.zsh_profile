@@ -32,6 +32,7 @@ alias audio='pwvucontrol'
 alias picture='sxiv'
 alias pdf='zathura'
 alias storage='gdu'
+alias paint='kolourpaint'
 alias lzd='lazydocker'
 
 alias v=nvim
