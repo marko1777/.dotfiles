@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # start a $myTerm
 
-set $myTerm st
+set $myTerm ghostty
 bindsym $mod+Return exec $myTerm
 # bindsym $mod+Return exec i3-sensible-terminal
 
@@ -378,7 +378,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id sleep 1; google-chrome-stable
 exec --no-startup-id sleep 1; slack
-exec st -e tmux
+exec ghostty -e tmux
 # exec --no-startup-id sleep 1; st -e tmux send-keys "~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh" Enter;
 # exec --no-startup-id sleep 5; tmux source-file ~/.tmux.conf
 
@@ -395,8 +395,7 @@ exec st -e tmux
 # terminal background change the line 362 from:
 # background #14191D
 # to:
-# background $term_background
-# Same logic applied to everything else.
+# background $term_background Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -514,4 +513,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+y exec --no-startup-id ~/.config/i3/scripts/toggle_keyboard_layout
 
-exec setxkbmap -option "caps:swapescape"
+# exec setxkbmap -option "caps:swapescape"
+exec xset r rate 200 30
+exec --no-startup-id sleep 4; ~/.config/i3/scripts/sink_set
