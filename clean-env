@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # I am using zsh instead of bash.  I was having some troubles using bash with
 # arrays.  Didn't want to investigate, so I just did zsh
-STOW_FOLDERS="bin, dunstify, i3, nvim, picom, screenlayout, tmux, zsh"
+STOW_FOLDERS="bin, dunstify, ghostty, i3, nvim, picom, screenlayout, tmux, zsh"
 DOTFILES=$HOME/.dotfiles
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")

@@ -1,0 +1,20 @@
+ background-opacity = 0.8
+# background-blur-radius = 0
+
+# font-family = FiraCode
+# window-padding-x = 10
+# window-padding-y = 10
+# window-padding-balance = true
+# window-padding-color = background
+
+copy-on-select = true
+
+shell-integration = zsh
+
+# macos-non-native-fullscreen = false
+# macos-titlebar-style = hidden
+
+gtk-titlebar = false
+confirm-close-surface = false
+
+auto-update = download
