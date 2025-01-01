@@ -230,6 +230,13 @@ workspace 13 output $sm
   bindsym $mod+Shift+5 move container to workspace 5
   bindsym $mod+Shift+6 move container to workspace 6
 
+  bindsym $mod+Ctrl+1 move container to workspace 1; workspace back_and_forth
+  bindsym $mod+Ctrl+2 move container to workspace 2; workspace back_and_forth
+  bindsym $mod+Ctrl+3 move container to workspace 3; workspace back_and_forth
+  bindsym $mod+Ctrl+4 move container to workspace 4; workspace back_and_forth
+  bindsym $mod+Ctrl+5 move container to workspace 5; workspace back_and_forth
+  bindsym $mod+Ctrl+6 move container to workspace 6; workspace back_and_forth
+
   # bindsym $mod+period mode "secondary"
 # }
 
