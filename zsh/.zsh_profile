@@ -1,12 +1,13 @@
 PATH=$PATH:$HOME/.local/bin
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOBIN=$GOROOT/bin
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH:$HOME/.cargo/bin
 
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psmem='ps auxf | sort -nr -k 4'
-alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu='ps auxf | sort -nr -k 4'
 alias tb="nc termbin.com 9999"
 alias python='python3'
 
@@ -34,9 +35,12 @@ alias pdf='zathura'
 alias storage='gdu'
 alias paint='kolourpaint'
 alias lzd='lazydocker'
+alias typing='ktouch'
+alias dvorak='xmodmap ~/tools/keyboards/xmodmap/xmodmap'
+# alias rm= "rm "
 
 alias v=nvim
-alias vi=nvim
+# alias vi=nvim
 alias vim=nvim
 export EDITOR=nvim
 export VISUAL=nvim

@@ -74,7 +74,7 @@ plugins=(
     git
     archlinux
     zsh-syntax-highlighting
-    # zsh-vi-mode
+    zsh-vi-mode
     # aliases
     # alias-finder
     # tmux
