@@ -1,0 +1,153 @@
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+
+# i3 doesn't have "normalizations" feature that why we disable them here.
+# But the feature is very helpful.
+# Normalizations eliminate all sorts of weird tree configurations that don't make sense.
+# Give normalizations a chance and enable them back.
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+after-startup-command = ['exec-and-forget sketchybar']
+
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+start-at-login = true
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+# on-focus-changed = ['move-mouse monitor-lazy-center']
+
+[mode.main.binding]
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+    alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
+
+
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+
+    # i3 wraps focus by default
+    alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # Consider using 'join-with' command as a 'split' replacement if you want to enable
+    # normalizations
+    # alt-z = 'split horizontal'
+    # alt-v = 'split vertical'
+
+    alt-m = 'fullscreen'
+
+    alt-v = 'layout v_tiles' # 'layout stacking' in i3
+    alt-z = 'layout h_tiles' # 'layout tabbed' in i3
+    alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+    alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+    # Not supported, because this command is redundant in AeroSpace mental model.
+    # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
+    #alt-space = 'focus toggle_tiling_floating'
+
+    # `focus parent`/`focus child` are not yet supported, and it's not clear whether they
+    # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
+    # alt-a = 'focus parent'
+
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+    alt-0 = 'workspace 10'
+
+    # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    # alt-b = 'workspace B'
+    # alt-c = 'workspace C'
+    # alt-d = 'workspace D'
+    # alt-e = 'workspace E'
+    # alt-f = 'workspace F'
+    # alt-g = 'workspace G'
+    # alt-i = 'workspace I'
+
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
+    alt-shift-9 = 'move-node-to-workspace 9'
+    alt-shift-0 = 'move-node-to-workspace 10'
+
+
+    # alt-shift-a = 'move-node-to-workspace A'
+    # alt-shift-b = 'move-node-to-workspace B'
+    # alt-shift-c = 'move-node-to-workspace C'
+    # alt-shift-d = 'move-node-to-workspace D'
+    # alt-shift-e = 'move-node-to-workspace E'
+    # alt-shift-f = 'move-node-to-workspace F'
+    # alt-shift-g = 'move-node-to-workspace G'
+    # alt-shift-i = 'move-node-to-workspace I'
+
+    alt-period = 'focus-monitor right'
+    alt-comma = 'focus-monitor left'
+
+    alt-shift-period = 'move-node-to-monitor right'
+    alt-shift-comma = 'move-node-to-monitor left'
+
+    alt-shift-c = 'close --quit-if-last-window'
+
+    alt-tab = 'workspace-back-and-forth'
+
+    alt-r = 'mode resize'
+
+    alt-shift-semicolon = 'mode service'
+
+
+[mode.resize.binding]
+    h = 'resize width -50'
+    j = 'resize height +50'
+    k = 'resize height -50'
+    l = 'resize width +50'
+    enter = 'mode main'
+    esc = 'mode main'
+
+# 'service' binding mode declaration.
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main'] # reset layout
+    f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.Outlook'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+    if.app-id = 'com.docker.docker'
+    if.during-aerospace-startup = true
+    run = ['move-node-to-workspace 5']
+
