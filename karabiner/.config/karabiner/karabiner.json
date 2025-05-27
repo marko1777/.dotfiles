@@ -7,6 +7,15 @@
                         "description": "Remap common keyboard shortcuts from Command to Control",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.mitchellh.ghostty",
+                                            "^io\\.ghostty\\.Ghostty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": { "mandatory": ["control"] }
@@ -168,6 +177,28 @@
                                 "to": [
                                     {
                                         "key_code": "z",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.mitchellh.ghostty",
+                                            "^io\\.ghostty\\.Ghostty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "y",
                                         "modifiers": ["command"]
                                     }
                                 ],
@@ -382,6 +413,28 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.mitchellh.ghostty",
+                                            "^io\\.ghostty\\.Ghostty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "g",
                                     "modifiers": { "mandatory": ["control", "shift"] }
                                 },
@@ -450,12 +503,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "2",
                                     "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "l",
+                                        "key_code": "2",
                                         "modifiers": ["command"]
                                     }
                                 ],
@@ -625,6 +678,48 @@
                                     {
                                         "key_code": "0",
                                         "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "mandatory": ["control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "mandatory": ["control", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": ["command", "shift"]
                                     }
                                 ],
                                 "type": "basic"

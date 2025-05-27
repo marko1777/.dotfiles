@@ -142,12 +142,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'com.microsoft.Outlook'
+    if.app-id = 'com.microsoft.outlook'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-    if.app-id = 'com.docker.docker'
+    if.app-id = 'com.electron.dockerdesktop'
     if.during-aerospace-startup = true
     run = ['move-node-to-workspace 5']
 

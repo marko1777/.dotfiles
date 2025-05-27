@@ -12,7 +12,8 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=30 blur_radius=30 color=0x40000000
+# sketchybar --bar display=0,2 position=top height=30 blur_radius=30 color=0x40000000
+sketchybar --bar display=main position=top height=30 blur_radius=30 color=0x40000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -38,20 +39,20 @@ sketchybar --default "${default[@]}"
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces.
 
-sketchybar --add event aerospace_workspace_change
-
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        background.color=0x44ffffff \
-        background.corner_radius=5 \
-        background.height=20 \
-        background.drawing=off \
-        label="$sid" \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-done
+# sketchybar --add event aerospace_workspace_change
+#
+# for sid in $(aerospace list-workspaces --all); do
+#     sketchybar --add item space.$sid left \
+#         --subscribe space.$sid aerospace_workspace_change \
+#         --set space.$sid \
+#         background.color=0x44ffffff \
+#         background.corner_radius=5 \
+#         background.height=20 \
+#         background.drawing=off \
+#         label="$sid" \
+#         click_script="aerospace workspace $sid" \
+#         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+# done
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
